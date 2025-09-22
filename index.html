@@ -92,7 +92,7 @@
         position: absolute;
         inset: 0;
         background-repeat: repeat;
-        will-change: background-position;
+        will-change: transform, opacity;
       }
       
       .background-logo {
@@ -111,33 +111,36 @@
         opacity: 0.05;
       }
 
-      /* --- Dark Theme Background --- */
-      @keyframes grid-pan { 0% { background-position: 0% 0%; } 100% { background-position: 100% 100%; } }
-      @keyframes stars-pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.8; } }
-      @keyframes data-stream { 0% { background-position: -200% -200%; } 100% { background-position: 200% 200%; } }
+      /* --- NEW Dark Theme Background --- */
+      @keyframes bg-pan-1 {
+        0% { transform: translateX(0%) translateY(0%); }
+        50% { transform: translateX(-10%) translateY(5%); }
+        100% { transform: translateX(0%) translateY(0%); }
+      }
+      @keyframes bg-pan-2 {
+        0% { transform: translateX(0%) translateY(0%); }
+        50% { transform: translateX(5%) translateY(-10%); }
+        100% { transform: translateX(0%) translateY(0%); }
+      }
       
       #dark-bg { opacity: 0; }
       html.dark #dark-bg { opacity: 1; }
 
-      #dark-bg .stars {
-        background-image: radial-gradient(var(--primary-color) 0.5px, transparent 0.5px);
-        background-size: 200px 200px;
-        opacity: 0.3;
-        animation: stars-pulse 15s ease-in-out infinite;
+      .dark-gradient {
+        position: absolute;
+        inset: -50%;
+        transition: opacity 1s ease-in-out;
       }
-      #dark-bg .grid {
-        background-image:
-          linear-gradient(var(--primary-color, #06b6d4) 1px, transparent 1px),
-          linear-gradient(90deg, var(--primary-color, #06b6d4) 1px, transparent 1px);
-        background-size: 40px 40px;
-        animation: grid-pan 60s linear infinite;
-        opacity: 0.1;
+
+      .dark-gradient-1 {
+        background: radial-gradient(ellipse 40% 60% at 20% 30%, var(--primary-color) 0%, transparent 80%);
+        opacity: 0.2;
+        animation: bg-pan-1 45s ease-in-out infinite;
       }
-      #dark-bg .streams {
-        background-image: repeating-linear-gradient(135deg, transparent, transparent 10px, var(--secondary-color, #c084fc) 10px, var(--secondary-color, #c084fc) 12px);
-        background-size: 200% 200%;
-        animation: data-stream 20s linear infinite;
-        opacity: 0.05;
+      .dark-gradient-2 {
+        background: radial-gradient(ellipse 40% 60% at 80% 70%, #f59e0b 0%, transparent 80%); /* Amber color */
+        opacity: 0.15;
+        animation: bg-pan-2 55s ease-in-out infinite;
       }
       
       /* --- Light Theme Background --- */
@@ -179,11 +182,6 @@
         50% { text-shadow: 0 0 10px var(--primary-color-glow), 0 0 20px var(--primary-color-glow), 0 0 30px var(--primary-color-glow); }
       }
       .animate-text-glow { animation: text-glow 3s ease-in-out infinite; }
-      
-      @keyframes title-float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
-      }
 
       @keyframes button-pulse-glow {
         0%, 100% {
@@ -195,27 +193,22 @@
           transform: scale(1.03);
         }
       }
-      .animate-title-float {
-        animation: title-float 6s ease-in-out infinite, text-glow 3s ease-in-out infinite;
-      }
+
       .animate-button-pulse {
         animation: button-pulse-glow 4s ease-in-out infinite;
       }
 
-      @keyframes logo-pulse-glow {
-        0%, 100% {
-          filter: drop-shadow(0 0 8px var(--primary-color-glow));
-          transform: scale(1);
-        }
-        50% {
-          filter: drop-shadow(0 0 16px var(--primary-color-glow)) drop-shadow(0 0 8px var(--secondary-color-glow));
-          transform: scale(1.03);
-        }
+      .text-glass {
+        color: transparent;
+        background-image: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        text-shadow: 
+          0 1px 2px rgba(0,0,0,0.3), /* main shadow */
+          0 0 10px rgba(6, 182, 212, 0.5), /* inner cyan glow */
+          0 0 40px rgba(6, 182, 212, 0.3); /* outer cyan glow */
       }
-      .animate-logo-pulse {
-        animation: logo-pulse-glow 5s ease-in-out infinite;
-      }
-
+      
       .hud-border {
         position: relative;
         background-color: var(--panel-bg-color);
@@ -247,48 +240,72 @@
         transform: scale(1.02);
       }
       
-      /* --- Neon Preset Buttons --- */
-      .btn-preset-neon {
-        transition: all 0.3s ease;
-        border-width: 2px;
-        background-color: var(--panel-bg-color);
-        color: var(--neon-color, var(--text-color-muted));
-        border-color: var(--neon-color, var(--panel-border-color));
-        border-radius: 0.5rem; /* Rounded corners */
+      /* --- Modern Preset Buttons --- */
+      .btn-preset-modern {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0.75rem 1rem;
+        background-color: rgba(15, 23, 42, 0.7); /* slate-900 with opacity */
+        border: 1px solid var(--panel-border-color); /* inner border */
+        border-radius: 0.75rem; /* 12px */
+        box-shadow: inset 0 0 0 1px var(--primary-color); /* outer border */
+        transition: all 0.2s ease-in-out;
+        color: var(--text-color);
+        cursor: pointer;
       }
 
-      .btn-preset-neon:hover:not(.active) {
-        background-color: color-mix(in srgb, var(--neon-color) 15%, transparent);
-        box-shadow: 0 0 8px var(--neon-glow-color, transparent);
-        color: var(--neon-color, var(--text-color));
-      }
-
-      .btn-preset-neon.active {
-        background-color: var(--neon-color);
-        border-color: var(--neon-color);
-        color: #020617; /* A dark color for contrast */
-        text-shadow: 0 0 2px rgba(255,255,255,0.7);
-        box-shadow: 0 0 5px var(--neon-glow-color),
-                    0 0 10px var(--neon-glow-color),
-                    0 0 15px var(--neon-glow-color);
-        transform: scale(1.05);
-      }
-
-      /* Color definitions for presets */
-      .btn-neon-restore { --neon-color: #ffbf00; --neon-glow-color: rgba(255, 191, 0, 0.6); }
-      .btn-neon-relight { --neon-color: #ffff00; --neon-glow-color: rgba(255, 255, 0, 0.6); }
-      .btn-neon-style { --neon-color: #ff00ff; --neon-glow-color: rgba(255, 0, 255, 0.6); }
-      .btn-neon-background { --neon-color: #39ff14; --neon-glow-color: rgba(57, 255, 20, 0.6); }
-      .btn-neon-clothing { --neon-color: #00ffff; --neon-glow-color: rgba(0, 255, 255, 0.6); }
-      .btn-neon-passport { --neon-color: #4d4dff; --neon-glow-color: rgba(77, 77, 255, 0.6); }
-      .btn-neon-edit { --neon-color: #ff1b1b; --neon-glow-color: rgba(255, 27, 27, 0.6); }
-      .btn-neon-color_match { --neon-color: #ff69b4; --neon-glow-color: rgba(255, 105, 180, 0.6); }
-
-      /* Text color override for very bright neon colors for readability */
-      .btn-neon-relight.active, .btn-neon-clothing.active, .btn-neon-background.active {
-          color: #0c2929; /* A very dark cyan */
+      .btn-preset-modern:hover:not(.active) {
+        transform: scale(1.03);
+        background-color: color-mix(in srgb, var(--primary-color) 8%, rgba(15, 23, 42, 0.7));
+        box-shadow: inset 0 0 0 1px var(--primary-color), 0 0 12px var(--primary-color-glow);
       }
       
+      .btn-preset-modern.active {
+        background-color: var(--primary-color);
+        color: var(--button-primary-text);
+        box-shadow: 0 0 15px var(--primary-color-glow);
+        transform: scale(1.05);
+        border-color: var(--primary-color);
+      }
+      
+      .btn-preset-modern .icon-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        background-color: rgba(8, 29, 63, 0.6);
+        transition: background-color 0.2s ease;
+      }
+
+      .btn-preset-modern:hover .icon-container {
+        background-color: rgba(8, 29, 63, 1);
+      }
+
+      .btn-preset-modern.active .icon-container {
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+      
+      .btn-preset-modern .icon {
+        color: var(--primary-color);
+        transition: color 0.2s ease;
+      }
+      
+      .btn-preset-modern.active .icon, .btn-preset-modern.active .arrow-icon {
+        color: white;
+      }
+      
+      .btn-preset-modern .arrow-icon {
+        color: var(--text-color-muted);
+        transition: color 0.2s ease, transform 0.2s ease;
+      }
+
+      .btn-preset-modern:hover .arrow-icon {
+        transform: translateX(4px);
+      }
+
       .logo-mask {
         background-color: currentColor;
         -webkit-mask-image: url('data:image/svg+xml,%3csvg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"%3e%3cdefs%3e%3clinearGradient id="grad1" x1="0%25" y1="0%25" x2="100%25" y2="100%25"%3e%3cstop offset="0%25" stop-color="%230ea5e9"/%3e%3cstop offset="100%25" stop-color="%23a855f7"/%3e%3c/linearGradient%3e%3c/defs%3e%3cpath d="M52 4H12C7.58172 4 4 7.58172 4 12V52C4 56.4183 7.58172 60 12 60H52C56.4183 60 60 56.4183 60 52V12C60 7.58172 56.4183 4 52 4Z" stroke="url(%23grad1)" stroke-width="4"/%3e%3ccircle cx="32" cy="32" r="16" stroke="url(%23grad1)" stroke-width="4"/%3e%3ccircle cx="32" cy="32" r="6" fill="url(%23grad1)"/%3e%3cpath d="M50 14L46 18" stroke="url(%23grad1)" stroke-width="3" stroke-linecap="round"/%3e%3c/svg%3e');
@@ -303,13 +320,12 @@
 
     </style>
   </head>
-  <body class="font-mono">
+  <body class="font-sans">
     <div id="background-wrapper">
       <div class="background-logo"></div>
       <div id="dark-bg" class="background-layer">
-        <div class="background-layer stars"></div>
-        <div class="background-layer grid"></div>
-        <div class="background-layer streams"></div>
+        <div class="background-layer dark-gradient dark-gradient-1"></div>
+        <div class="background-layer dark-gradient dark-gradient-2"></div>
       </div>
       <div id="light-bg" class="background-layer">
         <div class="background-layer grid"></div>

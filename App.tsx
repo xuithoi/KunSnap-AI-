@@ -107,6 +107,14 @@ const InstagramIcon: React.FC<{ className?: string }> = ({ className }) => ( <sv
 const GitHubIcon: React.FC<{ className?: string }> = ({ className }) => ( <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg> );
 const LogoIcon: React.FC<{ className?: string }> = ({ className }) => ( <div className={`logo-mask ${className}`}></div> );
 
+// New Preset Icons
+const PhotoIcon: React.FC<{ className?: string }> = ({ className }) => ( <svg className={className} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" /></svg> );
+const IdCardIcon: React.FC<{ className?: string }> = ({ className }) => ( <svg className={className} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15A2.25 2.25 0 002.25 6.75v10.5A2.25 2.25 0 004.5 19.5z" /></svg> );
+const PencilIcon: React.FC<{ className?: string }> = ({ className }) => ( <svg className={className} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" /></svg> );
+const LightbulbIcon: React.FC<{ className?: string }> = ({ className }) => ( <svg className={className} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.311V21m-3.75-2.311V21m-3.75-2.101a7.5 7.5 0 01-1.42-4.972V10.5A7.5 7.5 0 0112 3v1.5m0 0V3m0 1.5a7.5 7.5 0 00-7.5 7.5v1.028c0 1.207.24 2.35.674 3.428m13.152-3.428a7.5 7.5 0 00-1.42-4.972V10.5a7.5 7.5 0 00-7.5-7.5v1.5m0 0V3m0 1.5a7.5 7.5 0 017.5 7.5v1.028c0 1.207-.24 2.35-.674 3.428m0 0a7.47 7.47 0 01-3.326 2.472M12 12h.01" /></svg> );
+const UserIcon: React.FC<{ className?: string }> = ({ className }) => ( <svg className={className} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg> );
+const ColorSwatchIcon: React.FC<{ className?: string }> = ({ className }) => ( <svg className={className} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" /><path strokeLinecap="round" strokeLinejoin="round" d="M12 3a9 9 0 00-9 9h18a9 9 0 00-9-9z" /></svg> );
+
 
 // Progress Bar Component
 interface ProgressBarProps {
@@ -345,15 +353,15 @@ const issueToFixMap: Record<ImageIssue, keyof typeof initialManualFixes> = {
     YELLOW_TEETH: 'skin_teeth',
 };
 
-const presetColorClasses: Record<string, string> = {
-  restore: 'btn-neon-restore',
-  relight: 'btn-neon-relight',
-  style: 'btn-neon-style',
-  background: 'btn-neon-background',
-  clothing: 'btn-neon-clothing',
-  passport: 'btn-neon-passport',
-  edit: 'btn-neon-edit',
-  color_match: 'btn-neon-color_match',
+const presetIconMap: Record<string, React.FC<{ className?: string }>> = {
+  restore: SparklesIcon,
+  relight: LightbulbIcon,
+  style: BrushIcon,
+  background: PhotoIcon,
+  clothing: UserIcon,
+  passport: IdCardIcon,
+  edit: PencilIcon,
+  color_match: ColorSwatchIcon,
 };
 
 
@@ -1253,28 +1261,59 @@ You are a world-class creative director and photo retoucher. Your goal is to tak
       </div>
   );
 
-  const MainMenu = () => (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4 text-center">
-        <div className="space-y-6 max-w-2xl w-full">
-            <div className="flex justify-center mb-4" style={staggeredAnimation(0)}>
-                <LogoIcon className="w-56 h-56 text-[var(--primary-color)] animate-logo-pulse" />
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-[var(--primary-color)] tracking-widest uppercase animate-title-float" style={staggeredAnimation(0.2)}>
-                {t('mainMenuTitle')}
-            </h1>
-            <p className="text-lg md:text-xl text-[var(--text-color-muted)]" style={staggeredAnimation(0.4)}>
-                {t('mainMenuSubtitle')}
-            </p>
-            <button
-                onClick={() => setShowMainMenu(false)}
-                className="w-full max-w-xs mx-auto bg-[var(--button-primary-bg)] hover:brightness-110 text-[var(--button-primary-text)] font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg active:scale-95 btn-hover-effect text-xl animate-button-pulse"
-                style={staggeredAnimation(0.6)}
-            >
-                {t('mainMenuButton')}
-            </button>
+  const MainMenu = () => {
+    const HudText: React.FC<{ children: React.ReactNode, className?: string, delay: number }> = ({ children, className, delay }) => (
+        <div className={`font-mono text-xs text-cyan-200/40 ${className}`} style={staggeredAnimation(delay)}>
+            {children}
         </div>
-    </div>
-  );
+    );
+    return (
+        <div className="min-h-screen flex flex-col items-center justify-center p-4 text-center relative overflow-hidden">
+            {/* Decorative HUD Elements */}
+            <HudText className="absolute top-5 left-5" delay={0.3}>
+                ( STOCKHOLM, SE ) <span className="text-white/60">21:03:47</span>
+            </HudText>
+            <HudText className="absolute top-5 right-5 text-right" delay={0.35}>
+                BERLIN, DE <span className="text-white/60">20:11:38</span> <br />
+                <div className="mt-2 text-white/80">
+                    <h4 className="text-lg tracking-[0.2em]">STRATAGLASS <span className="text-white/60">R-12</span></h4>
+                    <p className="text-cyan-200/30 text-[10px] leading-3 tracking-wider">
+                        A STUDY INVESTIGATING DUALITY AND FUSION THROUGH GLASS STRUCTURES FORMED BY FORCE, WEIGHT, AND CONTRAST. EACH LAYER CAPTURES A MOMENT OF FRACTURE AND UNITY.
+                    </p>
+                </div>
+            </HudText>
+            <HudText className="absolute bottom-5 left-5" delay={0.4}>
+                2026
+                <h4 className="text-lg tracking-[0.2em] text-white/80">ALPHA.LAYERED</h4>
+                <p className="text-cyan-200/30 text-[10px] leading-3 tracking-wider">BUILT ON DUAL STATES</p>
+                <ul className="text-cyan-200/30 text-[10px] leading-3 tracking-wider mt-2">
+                    <li>▸ STONE-GLASS FUSED IN ORGANIC BOUNDARY</li>
+                    <li>▸ ENERGY SPLIT INTO LAYERS BY IMPACT MEMORY</li>
+                </ul>
+            </HudText>
+            <HudText className="absolute bottom-5 right-5 text-xl" delay={0.45}>
+               <span className="opacity-50">⊹</span> <span className="opacity-20">⬨</span>
+            </HudText>
+
+
+            <div className="space-y-6 max-w-4xl w-full">
+                <h1 className="text-[14vw] md:text-[12rem] font-black leading-none text-glass" style={staggeredAnimation(0.1)}>
+                    Kun
+                </h1>
+                <p className="text-lg md:text-xl text-[var(--text-color-muted)]" style={staggeredAnimation(0.5)}>
+                    {t('mainMenuSubtitle')}
+                </p>
+                <button
+                    onClick={() => setShowMainMenu(false)}
+                    className="w-full max-w-xs mx-auto bg-cyan-400/10 hover:bg-cyan-400/20 border border-cyan-400 text-cyan-300 font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg active:scale-95 btn-hover-effect text-xl animate-button-pulse"
+                    style={staggeredAnimation(0.6)}
+                >
+                    {t('mainMenuButton')}
+                </button>
+            </div>
+        </div>
+    );
+  };
 
   if (showMainMenu && !isApiModalOpen) {
       return <MainMenu />;
@@ -1352,15 +1391,23 @@ You are a world-class creative director and photo retoucher. Your goal is to tak
                           <div className={hudPanelClass} style={staggeredAnimation(0.2)}>
                             <label className="block text-lg font-medium text-[var(--text-color)] mb-2">{t('selectAPreset')}</label>
                             <div className="grid grid-cols-2 gap-2">
-                                {presets.map(preset => (
+                                {presets.map(preset => {
+                                    const Icon = presetIconMap[preset.id];
+                                    return (
                                     <button 
                                       key={preset.id} 
                                       onClick={() => handlePresetSelect(preset.id)} 
-                                      className={`p-3 text-center rounded-lg font-semibold btn-preset-neon ${presetColorClasses[preset.id] || ''} ${selectedPreset === preset.id ? 'active' : ''}`}
+                                      className={`btn-preset-modern ${selectedPreset === preset.id ? 'active' : ''}`}
                                     >
-                                        {preset.label}
+                                      <div className="flex items-center gap-3">
+                                        <div className="icon-container">
+                                          {Icon && <Icon className="w-5 h-5 icon" />}
+                                        </div>
+                                        <span className="font-semibold">{preset.label}</span>
+                                      </div>
+                                      <ChevronRightIcon className="w-5 h-5 arrow-icon"/>
                                     </button>
-                                ))}
+                                )})}
                             </div>
                           </div>
                       )}
