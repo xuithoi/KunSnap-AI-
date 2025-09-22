@@ -174,16 +174,12 @@ export const translations = {
     apiKeyErrorRequired: "Please enter a valid API key.",
     manageApiKeyButton: "Manage API Key",
     // Main Menu
-    mainMenuTitle: "ToneRx AI Tools",
+    mainMenuTitle: "KunSnap AI Tools",
     mainMenuSubtitle: "Your Creative Co-Pilot for Image Generation & Editing",
     mainMenuButton: "Start Creating",
-    // Social Links
-    facebookLinkTitle: "Visit my Facebook",
-    instagramLinkTitle: "Visit my Instagram",
-    githubLinkTitle: "Visit my GitHub",
     // Guide
     guideTitle: "User Guide",
-    guideIntro: "Welcome to ToneRx AI Tools! This guide will walk you through all the features to help you create amazing images.",
+    guideIntro: "Welcome to KunSnap AI Tools! This guide will walk you through all the features to help you create amazing images.",
     guideProModeTitle: "Pro Mode",
     guideProModeDesc: "Pro Mode gives you fine-grained control over the image generation process. It involves two main steps: enhancing a prompt and then generating an image from it.",
     guideProModeStep1: "1. Craft Your Prompt:",
@@ -382,16 +378,12 @@ export const translations = {
     apiKeyErrorRequired: "Vui lòng nhập một khóa API hợp lệ.",
     manageApiKeyButton: "Quản lý API Key",
     // Main Menu
-    mainMenuTitle: "ToneRx AI Tools",
+    mainMenuTitle: "KunSnap AI Tools",
     mainMenuSubtitle: "Trợ lý Sáng tạo cho Chỉnh sửa & Tạo Ảnh",
     mainMenuButton: "Bắt Đầu Sáng Tạo",
-    // Social Links
-    facebookLinkTitle: "Ghé thăm Facebook của tôi",
-    instagramLinkTitle: "Ghé thăm Instagram của tôi",
-    githubLinkTitle: "Ghé thăm GitHub của tôi",
     // Guide
     guideTitle: "Hướng Dẫn Sử Dụng",
-    guideIntro: "Chào mừng bạn đến với ToneRx AI Tools! Hướng dẫn này sẽ chỉ cho bạn tất cả các tính năng để giúp bạn tạo ra những hình ảnh tuyệt vời.",
+    guideIntro: "Chào mừng bạn đến với KunSnap AI Tools! Hướng dẫn này sẽ chỉ cho bạn tất cả các tính năng để giúp bạn tạo ra những hình ảnh tuyệt vời.",
     guideProModeTitle: "Chế Độ Nâng Cao (Pro Mode)",
     guideProModeDesc: "Chế độ Nâng cao cho phép bạn kiểm soát chi tiết quá trình tạo ảnh. Nó bao gồm hai bước chính: nâng cấp prompt và sau đó tạo ảnh từ prompt đó.",
     guideProModeStep1: "1. Viết Prompt của bạn:",

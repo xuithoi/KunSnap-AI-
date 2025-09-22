@@ -1273,17 +1273,6 @@ You are a world-class creative director and photo retoucher. Your goal is to tak
                 {t('mainMenuButton')}
             </button>
         </div>
-        <div className="absolute bottom-8 flex items-center space-x-6" style={staggeredAnimation(0.8)}>
-            <a href="https://www.facebook.com/nvmt2002/" target="_blank" rel="noopener noreferrer" title={t('facebookLinkTitle')} className="text-[var(--text-color-muted)] hover:text-[var(--primary-color)] transition-all duration-300 transform hover:scale-110">
-                <FacebookIcon className="w-8 h-8"/>
-            </a>
-            <a href="https://www.instagram.com/tonerx2002/" target="_blank" rel="noopener noreferrer" title={t('instagramLinkTitle')} className="text-[var(--text-color-muted)] hover:text-[var(--primary-color)] transition-all duration-300 transform hover:scale-110">
-                <InstagramIcon className="w-8 h-8"/>
-            </a>
-            <a href="https://github.com/xRenoT" target="_blank" rel="noopener noreferrer" title={t('githubLinkTitle')} className="text-[var(--text-color-muted)] hover:text-[var(--primary-color)] transition-all duration-300 transform hover:scale-110">
-                <GitHubIcon className="w-8 h-8"/>
-            </a>
-        </div>
     </div>
   );
 
