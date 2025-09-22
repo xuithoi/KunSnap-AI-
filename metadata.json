@@ -1,0 +1,7 @@
+{
+  "name": "ToneRx AI Tools ",
+  "description": "An application to improve and tailor user-provided prompts for various text-to-image AI models. Users can select a target model, specify a desired prompt length, and upload a reference image to generate a highly effective, enhanced prompt.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
